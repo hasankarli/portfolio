@@ -1,0 +1,35 @@
+{
+  "name": "Hasan Karli",
+  "short_name": "Hasan Karli",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#071633",
+  "theme_color": "#071633",
+  "description": "Hello! I'm Hasan Karli, a Flutter developer, and this website is a platform where I showcase my own work. I specialize in mobile app development using Flutter technology, and here you can find the projects I have created. Feel free to explore to learn more about my experiences and skills, and to discover potential collaboration opportunities. Thank you!",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/hk-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/hk-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/hk-logo-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/hk-logo-maskable-192.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

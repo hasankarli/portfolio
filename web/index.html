@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta
+      name="description"
+      content="Hello! I'm Hasan Karlı, a Flutter developer, and this website is a platform where I showcase my own work. I specialize in mobile app development using Flutter technology, and here you can find the projects I have created. Feel free to explore to learn more about my experiences and skills, and to discover potential collaboration opportunities. Thank you!"
+    />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Hasan Karli" />
+    <link rel="apple-touch-icon" href="icons/hk-logo-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icons/hk-logo-512.png" />
+
+    <title>Hasan Karli</title>
+    <link rel="manifest" href="manifest.json" />
+
+    <script>
+      // The value below is injected by flutter build, do not touch.
+      var serviceWorkerVersion = null;
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+    <style>:root {--sp: 2.5s; /* change speed */}	</style>
+    <style>body,html{padding:0;margin:0;width:100%;height:100%;background:linear-gradient(#071633,#06213E)}body{display:flex;justify-content:center;align-items:center;}</style>
+    <style>* {margin: 0;padding: 0;}.canvas {width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;}.hexagon {display: flex;flex-direction: column;align-items: center;}.hexagon .row {display: flex;}.arrow {width: 0;height: 0;margin: 0 -2.5vmin;border-left: 5vmin solid transparent;border-right: 5vmin solid transparent;border-bottom: 9vmin solid #fff;animation: blink 1s infinite;filter: drop-shadow(0 0 7.5vmin #66bb6a);}.arrow.down {transform: rotate(180deg);}.arrow.outer-1 {animation-delay: -0.06s;}.arrow.outer-2 {animation-delay: -0.11s;}.arrow.outer-3 {animation-delay: -0.17s;}.arrow.outer-4 {animation-delay: -0.22s;}.arrow.outer-5 {animation-delay: -0.28s;}.arrow.outer-6 {animation-delay: -0.33s;}.arrow.outer-7 {animation-delay: -0.39s;}.arrow.outer-8 {animation-delay: -0.44s;}.arrow.outer-9 {animation-delay: -0.50s;}.arrow.outer-10 {animation-delay: -0.56s;}.arrow.outer-11 {animation-delay: -0.61s;}.arrow.outer-12 {animation-delay: -0.67s;}.arrow.outer-13 {animation-delay: -0.72s;}.arrow.outer-14 {animation-delay: -0.78s;}.arrow.outer-15 {animation-delay: -0.83s;}.arrow.outer-16 {animation-delay: -0.89s;}.arrow.outer-17 {animation-delay: -0.94s;}.arrow.outer-18 {animation-delay: -10s;}.arrow.inner-1 {animation-delay: -0.17s;}.arrow.inner-2 {animation-delay: -0.33s;}.arrow.inner-3 {animation-delay: -0.50s;}.arrow.inner-4 {animation-delay: -0.67s;}.arrow.inner-5 {animation-delay: -0.83s;}.arrow.inner-6 {animation-delay: -10s;}@keyframes blink {0% {opacity: 0.10;}30% {opacity: 1;}100% {opacity: 0.10;}}</style>
+  </head>
+  <body>
+      <div id="loading-indicator" class="canvas">
+        <div class="hexagon">
+           <div class="row">
+              <div class="arrow up outer outer-18"></div>
+              <div class="arrow down outer outer-17"></div>
+              <div class="arrow up outer outer-16"></div>
+              <div class="arrow down outer outer-15"></div>
+              <div class="arrow up outer outer-14"></div>
+           </div>
+           <div class="row">
+              <div class="arrow up outer outer-1"></div>
+              <div class="arrow down outer outer-2"></div>
+              <div class="arrow up inner inner-6"></div>
+              <div class="arrow down inner inner-5"></div>
+              <div class="arrow up inner inner-4"></div>
+              <div class="arrow down outer outer-13"></div>
+              <div class="arrow up outer outer-12"></div>
+           </div>
+           <div class="row">
+              <div class="arrow down outer outer-3"></div>
+              <div class="arrow up outer outer-4"></div>
+              <div class="arrow down inner inner-1"></div>
+              <div class="arrow up inner inner-2"></div>
+              <div class="arrow down inner inner-3"></div>
+              <div class="arrow up outer outer-11"></div>
+              <div class="arrow down outer outer-10"></div>
+           </div>
+           <div class="row">
+              <div class="arrow down outer outer-5"></div>
+              <div class="arrow up outer outer-6"></div>
+              <div class="arrow down outer outer-7"></div>
+              <div class="arrow up outer outer-8"></div>
+              <div class="arrow down outer outer-9"></div>
+           </div>
+        </div>
+     </div>
+      
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="./firebase_init.js"></script>
+   
+    <script>      
+      // Pre-fetch key assets.
+      var assets = [
+        "assets/assets/rives/shapes.riv",
+        "assets/assets/images/logo.png",
+        "assets/assets/images/petros-logo.png",
+        "assets/assets/images/cardit-logo.png",
+        "assets/assets/images/trendmap-logo.png",
+        "assets/assets/images/cepilac-logo.png",
+        "assets/assets/images/girisimci-okulu-logo.png",
+      ].map(function (asset) {
+        return fetch(asset).catch(function (e) {
+          console.warn(e);
+        });
+      });
+    </script>
+
+    <script>
+      window.addEventListener("load", function (ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function (engineInitializer) {
+            engineInitializer.initializeEngine().then(function (appRunner) {
+              appRunner.runApp();
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
