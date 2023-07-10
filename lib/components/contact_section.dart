@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constant/theme.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 
 class ContactSection extends StatefulWidget {

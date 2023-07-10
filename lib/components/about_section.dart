@@ -1,7 +1,7 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../constant/theme.dart';
 
@@ -57,16 +57,9 @@ class AboutSection extends StatelessWidget {
                                 horizontal: 30, vertical: 25),
                           ),
                           onPressed: () async {
-                            try {
-                              var bytes = await rootBundle
-                                  .load("assets/hasan_karli_cv.pdf");
-                              final blob = Blob([bytes], 'application/pdf');
-                              final url = Url.createObjectUrlFromBlob(blob);
-                              window.open(url, "_blank");
-                              Url.revokeObjectUrl(url);
-                            } catch (e) {
-                              debugPrint('error: $e');
-                            }
+                            window.open(
+                                'https://drive.google.com/file/d/1huhn2hzD0HH302FsQ3h5oKkhYf2I8S0F/view?usp=drive_link',
+                                'new tab');
                           },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -124,16 +117,9 @@ class AboutSection extends StatelessWidget {
                                     horizontal: 30, vertical: 25),
                               ),
                               onPressed: () async {
-                                try {
-                                  var bytes = await rootBundle
-                                      .load("assets/hasan_karli_cv.pdf");
-                                  final blob = Blob([bytes], 'application/pdf');
-                                  final url = Url.createObjectUrlFromBlob(blob);
-                                  window.open(url, "_blank");
-                                  Url.revokeObjectUrl(url);
-                                } catch (e) {
-                                  debugPrint('error: $e');
-                                }
+                                window.open(
+                                    'https://drive.google.com/file/d/1huhn2hzD0HH302FsQ3h5oKkhYf2I8S0F/view?usp=drive_link',
+                                    'new tab');
                               },
                               child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
