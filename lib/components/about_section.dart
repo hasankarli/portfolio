@@ -44,10 +44,7 @@ class AboutSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/images/hasan-karli.png',
-                        fit: BoxFit.cover,
-                      ),
+                      const ProfilePhoto(),
                       MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: ElevatedButton(
@@ -104,10 +101,7 @@ class AboutSection extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            'assets/images/hasan-karli.png',
-                            fit: BoxFit.cover,
-                          ),
+                          const ProfilePhoto(),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: ElevatedButton(
@@ -142,6 +136,23 @@ class AboutSection extends StatelessWidget {
                 ],
               ),
       ],
+    );
+  }
+}
+
+class ProfilePhoto extends StatelessWidget {
+  const ProfilePhoto({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 1),
+      child: Image.asset(
+        'assets/images/profile.jpeg',
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

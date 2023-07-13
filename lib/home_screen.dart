@@ -7,6 +7,7 @@ import 'components/custom_app_bar.dart';
 import 'components/custom_drawer.dart';
 import 'components/home_section.dart';
 import 'components/projects_section.dart';
+import 'components/skills_section.dart';
 import 'constant/theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,8 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
   late ScrollController _scrollController;
   final _homeKey = GlobalKey();
-  final _aboutKey = GlobalKey();
   final _projectsKey = GlobalKey();
+  final _aboutKey = GlobalKey();
+  final _skillsKey = GlobalKey();
   final _contactsKey = GlobalKey();
 
   @override
@@ -42,8 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
       key: scaffoldKey,
       drawer: CustomDrawer(
           homeKey: _homeKey,
-          aboutKey: _aboutKey,
           projectsKey: _projectsKey,
+          skillsKey: _skillsKey,
+          aboutKey: _aboutKey,
           contactsKey: _contactsKey,
           scaffoldKey: scaffoldKey),
       body: Container(
@@ -54,8 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             CustomAppBar(
                 homeKey: _homeKey,
-                aboutKey: _aboutKey,
                 projectsKey: _projectsKey,
+                skillsKey: _skillsKey,
+                aboutKey: _aboutKey,
                 contactsKey: _contactsKey,
                 scaffoldKey: scaffoldKey),
             Expanded(
@@ -75,7 +79,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               key: _projectsKey,
                               child: const ProjectsSection()),
                           const SizedBox(
-                            height: 25,
+                            height: 30,
+                          ),
+                          Container(
+                              key: _skillsKey, child: const SkillsSection()),
+                          const SizedBox(
+                            height: 30,
                           ),
                           Container(
                               key: _aboutKey, child: const AboutSection()),

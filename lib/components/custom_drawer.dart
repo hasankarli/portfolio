@@ -10,13 +10,15 @@ class CustomDrawer extends StatelessWidget {
     required this.homeKey,
     required this.contactsKey,
     required this.aboutKey,
+    required this.skillsKey,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
-  final GlobalKey projectsKey;
   final GlobalKey homeKey;
-  final GlobalKey contactsKey;
+  final GlobalKey projectsKey;
+  final GlobalKey skillsKey;
   final GlobalKey aboutKey;
+  final GlobalKey contactsKey;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +77,16 @@ class CustomDrawer extends StatelessWidget {
                       onTap: () {
                         Scrollable.ensureVisible(
                           projectsKey.currentContext!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                    ),
+                    DrawerItem(
+                      title: 'SKILLS',
+                      onTap: () {
+                        Scrollable.ensureVisible(
+                          skillsKey.currentContext!,
                           duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
                         );

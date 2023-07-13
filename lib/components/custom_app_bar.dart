@@ -10,10 +10,12 @@ class CustomAppBar extends StatefulWidget {
     required this.projectsKey,
     required this.contactsKey,
     required this.aboutKey,
+    required this.skillsKey,
   });
   final GlobalKey<ScaffoldState> scaffoldKey;
   final GlobalKey homeKey;
   final GlobalKey projectsKey;
+  final GlobalKey skillsKey;
   final GlobalKey contactsKey;
   final GlobalKey aboutKey;
 
@@ -74,6 +76,15 @@ class _CustomAppBarState extends State<CustomAppBar>
                               duration: const Duration(milliseconds: 450),
                               curve: Curves.easeInOut),
                           child: const AppBarButton(text: 'PROJECTS')),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      GestureDetector(
+                          onTap: () => Scrollable.ensureVisible(
+                              widget.skillsKey.currentContext!,
+                              duration: const Duration(milliseconds: 450),
+                              curve: Curves.easeInOut),
+                          child: const AppBarButton(text: 'SKILLS')),
                       SizedBox(
                         width: 10.w,
                       ),
