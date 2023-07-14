@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constant/const.dart';
@@ -14,7 +15,11 @@ class ProjectsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isMobile = AppTheme.isMobile(context);
+    var projectsRowItemCount = AppTheme.isMobile(context)
+        ? 1
+        : AppTheme.isTablet(context)
+            ? 2
+            : 3;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -30,74 +35,37 @@ class ProjectsSection extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          height: 5,
+          height: 15,
         ),
-        isMobile
-            ? Column(
+        Column(
+          children:
+              List.generate(projects.length ~/ projectsRowItemCount, (index) {
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 3.w),
+              child: Row(
                 children: List.generate(
-                    projects.length,
-                    (index) => Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: MobileProjectWidget(
-                          imageAsset: projects[index].assetName,
-                          title: projects[index].title,
-                          bgColor: index == 1 ? Colors.white : null,
-                        ))).toList(),
-              )
-            : Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ProjectWidget(
-                          imageAsset: projects[0].assetName,
-                          title: projects[0].title,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Expanded(
-                        child: ProjectWidget(
-                          imageAsset: projects[1].assetName,
-                          title: projects[1].title,
-                          bgColor: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ProjectWidget(
-                          imageAsset: projects[2].assetName,
-                          title: projects[2].title,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Expanded(
-                        child: ProjectWidget(
-                          imageAsset: projects[3].assetName,
-                          title: projects[3].title,
-                          bgColor: Colors.white,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Expanded(
-                        child: ProjectWidget(
-                          imageAsset: projects[4].assetName,
-                          title: projects[4].title,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+                  projects
+                      .sublist(index * projectsRowItemCount,
+                          index * projectsRowItemCount + projectsRowItemCount)
+                      .length,
+                  (subIndex) => Expanded(
+                      child: ProjectWidget(
+                    logo: projects[subIndex + (index * projectsRowItemCount)]
+                        .logo,
+                    title: projects[subIndex + (index * projectsRowItemCount)]
+                        .title,
+                    description:
+                        projects[subIndex + (index * projectsRowItemCount)]
+                            .description,
+                    appPreview:
+                        projects[subIndex + (index * projectsRowItemCount)]
+                            .appPreview,
+                  )),
+                ),
               ),
+            );
+          }),
+        ),
         SizedBox(
           height: 3.h,
         ),
@@ -133,13 +101,15 @@ class ProjectsSection extends StatelessWidget {
 class MobileProjectWidget extends StatefulWidget {
   const MobileProjectWidget({
     super.key,
-    required this.imageAsset,
+    required this.logo,
     required this.title,
+    required this.appPreview,
     this.bgColor,
   });
-  final String imageAsset;
   final String title;
   final Color? bgColor;
+  final String logo;
+  final String appPreview;
 
   @override
   State<MobileProjectWidget> createState() => _MobileProjectWidgetState();
@@ -193,7 +163,7 @@ class _MobileProjectWidgetState extends State<MobileProjectWidget> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                    image: AssetImage(widget.imageAsset),
+                    image: AssetImage(widget.appPreview),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -234,13 +204,15 @@ class _MobileProjectWidgetState extends State<MobileProjectWidget> {
 class ProjectWidget extends StatefulWidget {
   const ProjectWidget({
     super.key,
-    required this.imageAsset,
+    required this.logo,
     required this.title,
-    this.bgColor,
+    required this.description,
+    required this.appPreview,
   });
-  final String imageAsset;
   final String title;
-  final Color? bgColor;
+  final String description;
+  final String logo;
+  final String appPreview;
 
   @override
   State<ProjectWidget> createState() => ProjectWidgetState();
@@ -254,66 +226,78 @@ class ProjectWidgetState extends State<ProjectWidget> {
       onEnter: (event) => setState(() => _isHover = true),
       onExit: (event) => setState(() => _isHover = false),
       child: AnimatedContainer(
+        height: 500,
         duration: const Duration(milliseconds: 200),
-        margin: EdgeInsets.only(top: !_isHover ? 10 : 0),
-        child: Container(
-          margin: const EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
-            color: widget.bgColor,
-            border: Border.all(
-              color: Colors.white,
-            ),
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+            color: _isHover
+                ? AppTheme.backgroundColor6
+                : AppTheme.backgroundColor5,
+            borderRadius: BorderRadius.circular(20),
             boxShadow: [
-              BoxShadow(
-                color: _isHover
-                    ? Colors.white.withOpacity(0.7)
-                    : Colors.transparent,
-                blurRadius: 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                height: 350,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: AssetImage(widget.imageAsset),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 1.h,
-              ),
-              Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.7),
-                      blurRadius: 30,
+              _isHover
+                  ? BoxShadow(
+                      color: Colors.white.withOpacity(0.1),
+                      blurRadius: 10,
                       offset: const Offset(0, 10),
+                    )
+                  : BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      blurRadius: 10,
+                      offset: const Offset(0, 2),
                     ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    widget.title,
-                    style: const TextStyle(color: Colors.white, fontSize: 25),
-                  ),
+            ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 270,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(widget.appPreview),
+                  fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
-                height: 1.h,
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              widget.title == projects.last.title ? 'Laravel' : 'Flutter',
+              style: TextStyle(color: AppTheme.buttonColor),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Row(
+              children: [
+                Text(
+                  widget.title,
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Icon(Icons.arrow_outward_outlined, color: AppTheme.buttonColor)
+                    .animate(
+                      target: _isHover ? 1.0 : 0.0,
+                    )
+                    .fade(
+                      curve: Curves.bounceInOut,
+                      duration: const Duration(milliseconds: 500),
+                    )
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              widget.description,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+              style:
+                  TextStyle(color: Colors.grey[500], fontSize: 15, height: 1.3),
+            ),
+          ],
         ),
       ),
     );

@@ -75,24 +75,26 @@ class _ContactSectionState extends State<ContactSection> {
               ],
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SocialButton(
-                    assetName: 'assets/svg/gmail.svg',
-                    url: '',
-                    mail: true,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  SocialButton(
-                      assetName: 'assets/svg/medium.svg',
-                      url: 'https://medium.com/@hasankarli')
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SocialButton(
+                  assetName: 'assets/svg/gmail.svg',
+                  url: '',
+                  mail: true,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                SocialButton(
+                    assetName: 'assets/svg/medium.svg',
+                    url: 'https://medium.com/@hasankarli'),
+                SizedBox(
+                  width: 20,
+                ),
+                SocialButton(
+                    assetName: 'assets/svg/phone.svg', phone: true, url: ''),
+              ],
             )
           ],
         )
@@ -102,16 +104,17 @@ class _ContactSectionState extends State<ContactSection> {
 }
 
 class SocialButton extends StatelessWidget {
-  const SocialButton({
-    super.key,
-    required this.assetName,
-    required this.url,
-    this.mail = false,
-  });
+  const SocialButton(
+      {super.key,
+      required this.assetName,
+      required this.url,
+      this.mail = false,
+      this.phone = false});
 
   final String assetName;
   final String url;
   final bool mail;
+  final bool phone;
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +126,9 @@ class SocialButton extends StatelessWidget {
             mail
                 ? await launchUrl(
                     Uri(scheme: 'mailto', path: 'karlihasann@gmail.com'))
-                : window.open(url, 'new tab');
+                : phone
+                    ? await launchUrl(Uri(scheme: 'tel', path: '+905448602601'))
+                    : window.open(url, 'new tab');
           },
           child: Container(
             padding: const EdgeInsets.all(20),
@@ -134,6 +139,7 @@ class SocialButton extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               assetName,
+              color: Colors.white,
             ),
           ),
         ),

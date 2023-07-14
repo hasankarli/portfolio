@@ -3,13 +3,43 @@ import 'package:portfolio/models/skillset.dart';
 import '../models/project.dart';
 
 final projects = [
-  Project(title: 'PETROS', assetName: 'assets/images/petros-logo.png'),
-  Project(title: 'CARDIT', assetName: 'assets/images/cardit-logo.png'),
-  Project(title: 'CEPILAC', assetName: 'assets/images/cepilac-logo.png'),
-  Project(title: 'TRENDMAP', assetName: 'assets/images/trendmap-logo.png'),
   Project(
-      title: 'GIRISIMCI OKULU',
-      assetName: 'assets/images/girisimci-okulu-logo.png'),
+      title: 'Petros',
+      description:
+          'This is an application that allows you to instantly view and track fuel prices at various gas stations, as well as explore and assess the stations you prefer in more detail.',
+      logo: 'assets/images/petros-logo.png',
+      appPreview: 'assets/images/petros-preview.png'),
+  Project(
+      title: 'Cardit',
+      description:
+          'Cardition is your online platform where your information are saved on cards, organized in folders and shared with the help of the digital card number: the BCN',
+      logo: 'assets/images/cardit-logo.png',
+      appPreview: 'assets/images/cardit-preview.png'),
+  Project(
+      title: 'Cepilac',
+      description:
+          'This is an application that provides information about the medications you are using, offers access to a wide range of personal care products, and facilitates convenient communication with nearby pharmacies.',
+      logo: 'assets/images/cepilac-logo.png',
+      appPreview: 'assets/images/cepilac-preview.png'),
+  Project(
+      title: 'Trendmap',
+      description:
+          'If you’re the one follows new trends and styles, Trendmap is the first app shows nearby fashion. Be aware this app will absolutely make you feel posh if you are obsessed with style. You will spend more hours than you think and it’ll become your new addiction!',
+      logo: 'assets/images/trendmap-logo.png',
+      appPreview: 'assets/images/trendmap-preview.png'),
+  Project(
+      title: 'Grocery',
+      description:
+          'Grocery is a mobile application that enhances user interface experiences. It is a simple and user-friendly application, designed with a seamless interface and engaging animations.',
+      logo: 'assets/images/trendmap-logo.png',
+      appPreview: 'assets/images/grocery-preview.png'),
+  Project(
+    title: 'Girisimci Okulu',
+    description:
+        'Girisimci okulu is a platform that offers training, summits, mentorship, and project development support to aspiring entrepreneurs. With the motto "Entrepreneurship is as much about the entrepreneur," it aims to create an experience-oriented training program within the entrepreneurial environment. The school is dedicated to empowering its users, including young entrepreneurs, and fostering a vibrant entrepreneurial community.',
+    logo: 'assets/images/girisimci-okulu-logo.png',
+    appPreview: 'assets/images/girisimci-okulu-preview.png',
+  ),
 ];
 
 final skills = [
