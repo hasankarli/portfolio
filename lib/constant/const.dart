@@ -68,3 +68,43 @@ final skills = [
   Skill(title: 'Slack', imageAsset: 'assets/images/skills/slack.png'),
   Skill(title: 'Asana', imageAsset: 'assets/images/skills/asana.png'),
 ];
+
+const String enPrivacyPolicyText = '''
+1. Data Collection and Usage
+1.1. The Application will collect data related to users' preferences in decision-making processes on their devices. This data will be used to enhance user experience, improve the Application, and provide better services.
+
+1.2. Users agree that the Application will not store their personal data in the cloud and that each data will remain on their respective devices.
+
+2. Data Security
+2.1. The Application pledges to keep users' personal data confidential. Appropriate technical and organizational measures will be taken to ensure data security.
+
+2.2. The Application will not share or sell user data with third parties.
+
+3. Advertisements
+3.1. The Application may display advertisements to users to improve services and sustain the Application.
+
+3.2. Advertisements may be provided by third-party advertising companies, and these companies will be responsible for their own data collection practices.
+
+4. Children's Privacy
+4.1. The Application aims not to intentionally collect personal data from children under the age of 13. It is essential for parents to monitor and approve their children's internet activities.
+
+5. Analytics and Tracking Technologies
+5.1. The Application may use analytics and similar tracking technologies to improve user experience, remember preferences, and identify users.
+
+5.2. Users have the option to accept or reject analytics by changing mobile application settings. However, rejecting analytics may prevent access to certain features of the Application.
+
+6. Links to Other Websites
+6.1. The Application may contain links to third-party websites. These links enable users to access websites outside the Application. However, the privacy policies and content of these linked websites are not under the control of the Application.
+
+6.2. Users are advised to read the privacy policies of external websites when redirected to them from the Application.
+
+7. Changes and Updates
+7.1. The Application may update and modify the privacy policy from time to time. Changes will be effective upon publication within the Application.
+
+7.2. Users should regularly review the updated privacy policy, and continuing to use the Application will signify their acceptance of the updated policy.
+
+8. Questions and Communication
+8.1. Users can use the communication channels designated by the Application for any questions or concerns related to the privacy policy.
+
+This privacy policy was accepted by users on 06 August 2023.
+''';
