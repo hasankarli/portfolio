@@ -6,7 +6,23 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [ {
+    "headers": [
+      {
+        "source": "/.well-known/assetlinks.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/.well-known/assetlinks.json",
+        "destination": "/.well-known/assetlinks.json"
+      },
+      {
       "source": "**",
       "destination": "/index.html"
    } ]

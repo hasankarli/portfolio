@@ -7,6 +7,7 @@ import 'package:portfolio/support_screen.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'components/loading_indicator_web.dart';
+import 'easying_privacy_policy_screen.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -31,6 +32,8 @@ class MyApp extends StatelessWidget {
               '/': (context) => const HomeScreen(),
               '/support': (context) => const SupportScreen(),
               '/privacy-policy': (context) => const PrivacyPolicyScreen(),
+              '/easying/privacy-policy': (context) =>
+                  const EasyingPrivacyPolicyScreen(),
             });
       },
     );

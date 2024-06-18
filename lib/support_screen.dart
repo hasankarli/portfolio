@@ -44,6 +44,16 @@ class _SupportScreenState extends State<SupportScreen> {
                             ),
                           ),
                           SizedBox(height: 20.h),
+                          TextButton(
+                            child: const Text('Details'),
+                            onPressed: () async {
+                              await launchUrl(
+                                Uri.parse('https://hasankarli.com/details'),
+                                webOnlyWindowName: '_blank',
+                              );
+                            },
+                          ),
+                          SizedBox(height: 20.h),
                           Text(
                             'If you have any questions or need help, please feel free to contact me. I will get back to you as soon as possible.',
                             style: TextStyle(
@@ -215,6 +225,16 @@ class _WebWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
+                    ),
+                    SizedBox(height: 20.h),
+                    TextButton(
+                      child: const Text('Details'),
+                      onPressed: () async {
+                        await launchUrl(
+                          Uri.parse('https://hasankarli.com/details'),
+                          webOnlyWindowName: '_blank',
+                        );
+                      },
                     ),
                     SizedBox(height: 20.h),
                     Text(
