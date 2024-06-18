@@ -25,8 +25,7 @@ final projects = [
           'This is an application that provides information about the medications you are using, offers access to a wide range of personal care products, and facilitates convenient communication with nearby pharmacies.',
       logo: 'assets/images/cepilac-logo.png',
       appPreview: 'assets/images/cepilac-preview.png',
-      appStoreLink:
-          'https://play.google.com/store/apps/details?id=com.mobsmile.cepilac'),
+      appStoreLink: 'https://apps.apple.com/tr/app/cepilac/id1558917867'),
   Project(
       title: 'Trendmap',
       description:
