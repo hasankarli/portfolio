@@ -78,10 +78,9 @@ class HomeSection extends StatelessWidget {
                         ? const EdgeInsets.only(right: 10)
                         : EdgeInsets.zero,
                     padding: EdgeInsets.symmetric(
-                        horizontal: isMobile ? 15 : 30,
-                        vertical: isMobile ? 10 : 20),
+                        horizontal: isMobile ? 15 : 30, vertical: 10),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(isMobile ? 30 : 40),
+                      borderRadius: BorderRadius.circular(10),
                       gradient: const LinearGradient(
                         colors: [
                           Color.fromARGB(255, 252, 74, 29),

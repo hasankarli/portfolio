@@ -1,10 +1,12 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../constant/theme.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 
 class ContactSection extends StatefulWidget {
   const ContactSection({
@@ -92,8 +94,6 @@ class _ContactSectionState extends State<ContactSection> {
                 SizedBox(
                   width: 20,
                 ),
-                SocialButton(
-                    assetName: 'assets/svg/phone.svg', phone: true, url: ''),
               ],
             )
           ],

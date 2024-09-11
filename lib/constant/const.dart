@@ -138,3 +138,6 @@ const String enEasyingPrivacyPolicyText = '''
   If you have any questions about this Privacy Policy, the practices of this app, or your dealings with this app, please contact us at karlihasann@gmail.com.
   This document was last updated on 12.04.2024
 ''';
+
+const about =
+    '''With 5 years of experience as a professional software engineer specializing in mobile application development. I am dedicated to creating pixel-perfect apps. Additionally, I have experience with technologies such as Python and JavaScript as needed for app development. I am passionate about working on successful projects. Enjoy reading about tech topics and effective product strategies.''';
